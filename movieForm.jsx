@@ -40,10 +40,7 @@ const MovieForm = () => {
       .label("Daily Rental Rate"),
   };
 
-  async function getAllGenres() {
-    const { data } = await getGenres();
-    setGenres([...data]);
-  }
+
 
   async function getSingleMovie() {
     try {
@@ -57,7 +54,7 @@ const MovieForm = () => {
   }
 
   useEffect(() => {
-    getAllGenres();
+    setGenres(getGenres());
     if (id === "new") return;
 
     getSingleMovie();
