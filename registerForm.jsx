@@ -14,17 +14,8 @@ function RegisterForm() {
     name: Joi.string().required().label("Name"),
   };
 
-  const doSubmit = async () => {
-    try {
-      const response = await register(data);
-      auth.loginWithJwt(response.headers["x-auth-token"]);
-      window.location = ("/");
-    } catch (error) {
-      if (error.response && error.response.status === 400) {
-        errors.username = error.response.data;
-        setErrors({ username: error.response.data });
-      }
-    }
+  const doSubmit = ) => {
+   console.log("Submit")
   };
 
   return (
